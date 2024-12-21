@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
 import Footer from './Footer';
 import '../css/home.css';
+// import Header from './Header';
 import { motion } from 'framer-motion';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db, auth } from '../firebase';
@@ -11,6 +11,9 @@ import {
   FaUsers, FaHandHoldingHeart, FaHeartbeat, FaTint, FaHospital, FaQuoteLeft,
 } from 'react-icons/fa';
 
+import Header from "./Header"
+import Image from '../images/donate.png';
+// import Dummy from './dummy header';
 const Home = () => {
   const [stats, setStats] = useState({ totalUsers: 0, donors: 0, recipients: 0 });
   const [recipients, setRecipients] = useState([]);
@@ -59,15 +62,15 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="hero-section">
+    <div className="hero-section">
+    <Header/>
         <div className="hero-overlay">
           <div className="hero-content">
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-            >
+              >
               Donate Blood, Save Lives
             </motion.h1>
             <motion.p
@@ -95,6 +98,8 @@ const Home = () => {
               >
                 {loading ? 'Searching...' : 'Find Recipients'}
               </button>
+              <br />
+              <br />
             </div>
           </div>
         </div>
@@ -138,6 +143,9 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
+      <div className='donar-img_img'>
+        <img src={Image} alt="image" />
+      </div>
 
       <div className="testimonials-section">
         <h2 className="section-title">What Donors Say</h2>
@@ -150,12 +158,17 @@ const Home = () => {
           <div className="testimonial-card">
             <FaQuoteLeft className="testimonial-icon" />
             <p>"The process was smooth and easy. I encourage everyone to try it once."</p>
-            <h4>- Priya Sharma</h4>
+            <h4>- Mahaveer Ramani</h4>
+          </div>
+          <div className="testimonial-card">
+            <FaQuoteLeft className="testimonial-icon" />
+            <p>"Donating blood is a noble act. Knowing that my donation could save a life is incredibly fulfilling."</p>
+            <h4>- Kavita Sharma</h4>
           </div>
         </div>
       </div>
 
-      <Footer />
+      <Footer/>
     </>
   );
 };

@@ -6,16 +6,20 @@ import Dashboard from "./component/Dashboard";
 import Donate from "./component/Donate";
 import Receive from "./component/Receive";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Donors from "./component/donors";
+import Profile from "./component/Profile";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/donate" element={<Donate />} />
-        <Route path="/receive" element={<Receive />} />
+        <Route path="/"            element={<Signup />} />
+        <Route path="/login"       element={<Login />} />
+        <Route path="/dashboard"   element={<Dashboard />} />
+        <Route path="/donate"      element={<Donate />} />
+        <Route path="/receive"     element={<Receive />} />
+        <Route path="/donors"      element={<Donors />} />
+        <Route path="/profile"     element={<Profile />} />
       </Routes>
     </Router>
   );

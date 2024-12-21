@@ -21,6 +21,7 @@ const SignUp = () => {
   });
 
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -111,30 +112,91 @@ const SignUp = () => {
             />
           </div>
 
-          <div className="mb-3">
+          <div className="mb-3 position-relative">
             <label htmlFor="password" className="form-label">Password*</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Create a password"
-              required
-            />
+            <div className="input-group">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                className="form-control"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Create a password"
+                required
+              />
+              <span
+                className="input-group-text password-eye"
+               
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+              </span>
+            </div>
           </div>
 
           <div className="mb-3">
             <label htmlFor="age" className="form-label">Age*</label>
             <input
-              type="number"
+              type="text"
               className="form-control"
               id="age"
               name="age"
               value={formData.age}
               onChange={handleChange}
               placeholder="Enter your age"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+  <label htmlFor="bloodGroup" className="form-label">Blood Group*</label>
+  <select
+    className="form-select"
+    id="bloodGroup"
+    name="bloodGroup"
+    value={formData.bloodGroup}
+    onChange={handleChange}
+    required
+  >
+    <option value="">Select Blood Group</option>
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+  </select>
+</div>
+
+
+
+          <div className="mb-3">
+            <label htmlFor="contactNumber" className="form-label">ContactNumber*</label>
+            <input
+              type="text"
+              className="form-control"
+              id="contactNumber"
+              name="contactNumber"
+              value={formData.contactNumber}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="address" className="form-label">Address*</label>
+            <input
+              type="text"
+              className="form-control"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              placeholder="Enter your phone Address"
               required
             />
           </div>
@@ -154,7 +216,7 @@ const SignUp = () => {
               <option value="receiver">Receiver</option>
             </select>
           </div>
-
+<br />
           <button type="submit" className="btn btn-primary">Sign Up</button>
         </form>
 

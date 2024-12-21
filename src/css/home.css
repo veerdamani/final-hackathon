@@ -1,12 +1,12 @@
-/* home.css */
+
 
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    /* background-color: #b34343; */
+    color: #ffffff;
   }
   
   h1, h2, h3, h4 {
@@ -15,14 +15,18 @@ body {
   }
   
   /* Hero Section */
-  .hero-section {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.google.com/imgres?q=blood%20website%20hero%20section%20image&imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F509677888%2Fvector%2Fblood-drop-super-hero-standing-with-cape.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3Dd2yco0fdH2ig3E14Td0uGfW7YfM9rSU4422TF3mAZ70%3D&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fblood-donation-hero&docid=C7hfS2DwRU9wTM&tbnid=IoHs3-QIMaIa9M&vet=12ahUKEwicz-W69LCKAxVeRPEDHYLRMYAQM3oECEkQAA..i&w=612&h=393&hcb=2&ved=2ahUKEwicz-W69LCKAxVeRPEDHYLRMYAQM3oECEkQAA') center/cover no-repeat;
-    height: 60vh;
+   .hero-section {
+    /* position: relative;  */
+    background: linear-gradient(rgba(126, 104, 104, 0.6), rgba(176, 102, 102, 0.6)),  
+     url('https://www.google.com/imgres?q=blood%20website%20hero%20section%20image&imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F509677888%2Fvector%2Fblood-drop-super-hero-standing-with-cape.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3Dd2yco0fdH2ig3E14Td0uGfW7YfM9rSU4422TF3mAZ70%3D&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fblood-donation-hero&docid=C7hfS2DwRU9wTM&tbnid=IoHs3-QIMaIa9M&vet=12ahUKEwicz-W69LCKAxVeRPEDHYLRMYAQM3oECEkQAA..i&w=612&h=393&hcb=2&ved=2ahUKEwicz-W69LCKAxVeRPEDHYLRMYAQM3oECEkQAA') center/cover no-repeat;
     display: flex;
+    flex-direction: column;
+    /* height: 80vh; */
     align-items: center;
     justify-content: center;
-  }
+    margin-top: 870px;
+    width: 1263px;
+  } 
   
   .hero-overlay {
     text-align: center;
@@ -32,6 +36,8 @@ body {
   .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+    padding-top: 60px;
+    
     color: #FFD700;
   }
   
@@ -144,6 +150,7 @@ body {
     transform: scale(1.05);
   }
   
+  
   .stat-icon {
     font-size: 2rem;
     margin-bottom: 10px;
@@ -167,7 +174,7 @@ body {
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(180, 161, 161, 0.1);
     text-align: center;
     transition: transform 0.3s;
   }
@@ -188,6 +195,15 @@ body {
     color: #333;
   }
   
+.donar-img_img{
+  width: 100%;
+}
+
+.donar-img_img img{
+  width: 100%;
+  height: 400px;
+}
+
   /* Testimonials Section */
   .testimonials {
     background-color: #457B9D;
@@ -195,9 +211,32 @@ body {
     padding: 40px 20px;
   }
   
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    background-color: #4f3c3c;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .testimonials-section{
+    padding-top: 10px;
+    background-color: #d1989c;
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .testimonials h2 {
     text-align: center;
   }
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
   
   .benefit-grid {
     display: grid;
@@ -207,7 +246,7 @@ body {
   }
   
   .benefit-card {
-    background-color: #1D3557;
+    background-color: #ce3c3c;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -221,10 +260,19 @@ body {
   
   /* Footer */
   footer {
-    background-color: #1D3557;
+    background-color: #b78387;
     color: white;
     text-align: center;
     padding: 20px;
+  }
+  .testimonial-card {
+    background-color: #be3d3d;
+    border: 1px solid #e2e3e5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   /* Responsive Design */
@@ -241,4 +289,26 @@ body {
       grid-template-columns: 1fr;
     }
   }
+
+
+
   
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+
+  .testimonial-card p {
+    font-size: 14px;
+  }
+
+  .testimonial-card h4 {
+    font-size: 16px;
+  }
+}

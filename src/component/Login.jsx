@@ -37,7 +37,7 @@ const Login = () => {
       timer: 3000,
       timerProgressBar: true
     }).then(() => {
-      navigate('/');
+      navigate('/dashboard');
     });
   };
 
@@ -110,7 +110,7 @@ const Login = () => {
         </form>
 
         <div className="mt-4 text-center">
-          <p>Don't have an account? <a href="/signup" className="text-primary">Sign up here</a></p>
+          <p>Don't have an account? <a href="/" className="text-primary">Sign up here</a></p>
         </div>
 
         <div className="mt-3 text-center">
